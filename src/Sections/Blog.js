@@ -3,13 +3,21 @@ import {
   Typography,
   Box,
 } from '@mui/material'
-import { theme } from '../Themes/Theme';
+import { useTheme } from "@mui/material/styles"
 
 export function Blog() { 
+const theme = useTheme()
+  const posts = [
+    {
+      title: "The Rise of AI", 
+      body: ""
+
+    }
+  ]
   return (
     <Box id="Blog"
       sx={{
-        height: "100vh",
+        // height: "100vh",
         width: "100%",
         display: "flex", 
         justifyContent: 'center',

@@ -5,6 +5,7 @@ import {
   Container, 
   Box,
   Button,
+  Link,
  } from '@mui/material'
 import {styled, useTheme} from '@mui/material/styles'
 
@@ -17,9 +18,21 @@ const StyledButton = styled(Button)(({theme})=>({
   },
 }))
 
+const StyledLink = styled(Link)(({theme}) => ({
+  marginLeft: "5px", 
+  marginRight: "5px",
+  background: theme.secondary,
+  color: theme.primary,
+
+  '&:hover': {
+    borderColor: '#FF7300',
+    textDecoration: "underline"
+  },
+}))
+
 export function Header() {
   const theme = useTheme()
-  const navItems = ['About','Blog','Projects','Contact']
+  const sections = ['About','Blog','Projects','Contact']
     return ( 
     <Box 
     position='fixed'
@@ -36,18 +49,20 @@ export function Header() {
           </Typography>
           <Box 
             sx={{ 
-              flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' },
-
+              flexGrow: 1, 
+              display: { 
+                md: 'flex', 
+                justifyContent: 'flex-end' },
               }}>
-            {navItems.map((page) => (
-                <StyledButton
-                  key={page}
-                  // color='black'
-                  sx={{my: 2, color: 'black', display: 'flex' }}
-                  href={`#${page}`}
-                >
-                  {page}
-                </StyledButton>
+          {
+              sections.map(section => (
+                <StyledLink
+                  underline="none"
+                  key={section}
+                  variant="h6"
+                  href={`#${section}`}>
+                    {section}
+                </StyledLink>
             ))}
           </Box>
         </Toolbar>

@@ -5,9 +5,8 @@ import {
   Divider,
   Link
 } from '@mui/material'
-import {styled} from '@mui/material/styles';
-import { useTheme } from '@mui/material/styles';
-import { theme } from '../Themes/Theme';
+import { useTheme, styled } from '@mui/material/styles';
+// import { theme } from '../Themes/Theme';
 //Todo: primary vs. secondary vs. tertiary colors
 
 
@@ -16,15 +15,13 @@ const StyledLink = styled(Link)(({theme}) => ({
   background: theme.secondary,
   color: theme.primary,
   '&:hover': {
-    // backgroundColor: "#FF7300",
     borderColor: '#FF7300',
     textDecoration: "underline"
-    // color: "#808080",
   },
 }))
 
 export function Landing() { 
-  // const theme = useTheme()
+  const theme = useTheme()
   const sections = ['About','Blog','Projects','Contact']
   return (
     <Box
@@ -43,7 +40,7 @@ export function Landing() {
           sx={{
           color: theme.palette.primary.main}}
           variant='h1'> 
-          Dan Benton 
+          Dan<strong>Benton</strong>
         </Typography>
         <Divider sx={{
           margin: "30px",
