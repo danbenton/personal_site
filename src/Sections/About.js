@@ -37,109 +37,148 @@ export function About() {
         background: theme.palette.secondary.main,
       }}>
         <Box>
-          <Box id='mystory'
+          {/* <Box id='mystory'
             sx={{
               display: "flex",
               flexDirection: "column",
-              marginTop: "100px",
+            }}> */}
+        <Box id='openingSalvo'
+          sx={{
+            display: "flex", 
+            flexDirection: "row",
+          }}>
+          <Grid container spacing={2}
+            sx={{
+              display: "flex", 
+              flexDirection: "row",
+              flexWrap: "wrap", 
+              margin: "10%",
             }}>
-            <Box
+            <Grid xs={6}>
+              {
+                meImages.map((item) => (
+                  <Box
+                    key={item}
+                    sx={{
+                      margin: "10px",
+                      display: "flex", 
+                      justifyContent: "center", 
+                    }}>
+                    <Box 
+                      component="img" 
+                      key={item}
+                      src={item} alt={item}
+                      sx={{ 
+                        height: "auto", width: "100%", 
+                        maxWidth: "600px", 
+                        objectFit: "cover", borderRadius: "20px",
+                      }}/>
+                  </Box>
+                ))
+              }
+            </Grid>
+            <Grid xs={6}
               sx={{
-                display: "flex", 
-                flexDirection: "row",
+                textAlign: "left",
+                display: "flex",
               }}>
-              <Grid container spacing={2}
+              <Box 
+                id="mystory-text"
                 sx={{
                   display: "flex", 
-                  flexDirection: "column",
-                  flexWrap: "wrap", 
+                  flexDirection: "column", 
+                  marginLeft: "10%",
+                  marginRight: "10%",
                 }}>
-                <Grid xs={8}>
-                  {
-                  meImages.map((item) => (
-                    <Box
-                      key={item}
-                      sx={{
-                        margin: "10px",
-                        display: "flex", 
-                        justifyContent: "center", 
-                      }}>
-                      <Box 
-                        component="img" 
-                        key={item}
-                        src={item} alt={item}
-                        sx={{ 
-                          height: "100%", width: "100%", 
-                          objectFit: "cover", borderRadius: "20px",
-                        }}/>
-                    </Box>
-                  ))
-                }
-              </Grid>
-              </Grid>
-              <Box 
-              id="mystory-text"
-              sx={{
-                display: "flex", 
-                flexDirection: "column"
-              }}>
-              <PrimaryType variant="h2">The Journey Here.</PrimaryType>
-            <Box
-              sx={{ 
-                  display: 'flex',
-                  flexWrap: "wrap",            
-                }}>
-              <Box>
-                <PrimaryType
+                <TertiaryType variant="h6">INTRO.</TertiaryType>   
+                <Typography variant="h2"
                   sx={{
-                    lineHeight: "30px",
-                    marginBottom: "10px"
+                    color: theme.palette.primary.main,
+                    '&:hover': {
+                      textDecoration: `underline ${theme.palette.tertiary.main} 2px`
+                    }
+                  }}>How We Got Here.</Typography>
+                <Box id='storytextbox'
+                  sx={{ 
+                    display: 'flex',
+                    flexWrap: "wrap",            
                   }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. 
-                Fames ac turpis egestas sed. Aenean euismod elementum nisi quis eleifend. Lobortis feugiat vivamus at augue eget arcu dictum varius. Eros donec ac odio tempor. Scelerisque fermentum dui faucibus in ornare quam viverra. 
-                </PrimaryType>
-                <PrimaryType
-                  sx={{
-                    lineHeight: "30px",
-                    marginBottom: "10px"
-                  }}>   
-                  At tempor commodo ullamcorper a lacus vestibulum sed arcu non. Lobortis mattis aliquam faucibus purus. Sit amet mauris commodo quis imperdiet massa. Ac tortor dignissim convallis aenean et tortor at. Sit amet consectetur adipiscing elit. Tristique sollicitudin nibh sit amet. Dui nunc mattis enim ut tellus. Lacus sed viverra tellus in hac. Nisl nunc mi ipsum faucibus vitae aliquet. Nunc non blandit massa enim nec dui nunc mattis enim. 
-                </PrimaryType>
+                  <Box id='storytext'>
+                    <PrimaryType
+                      sx={{
+                        lineHeight: "30px",
+                        marginBottom: "10px"
+                      }}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. 
+                      Fames ac turpis egestas sed. Aenean euismod elementum nisi quis eleifend. 
+                      {/* Lobortis feugiat vivamus at augue eget arcu dictum varius. Eros donec ac odio tempor. 
+                      Scelerisque fermentum dui faucibus in ornare quam viverra.  */}
+                    </PrimaryType>
+                    <PrimaryType
+                      sx={{
+                        lineHeight: "30px",
+                        marginBottom: "10px"
+                      }}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                      Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. 
+                      Fames ac turpis egestas sed. Aenean euismod elementum nisi quis eleifend. 
+                      {/* Lobortis feugiat vivamus at augue eget arcu dictum varius. Eros donec ac odio tempor. 
+                      Scelerisque fermentum dui faucibus in ornare quam viverra.  */}
+                    </PrimaryType>
+                    <PrimaryType
+                      sx={{
+                        lineHeight: "30px",
+                        marginBottom: "10px"
+                      }}>   
+                      At tempor commodo ullamcorper a lacus vestibulum sed arcu non. Lobortis mattis aliquam faucibus purus. 
+                      Sit amet mauris commodo quis imperdiet massa. 
+                      Ac tortor dignissim convallis aenean et tortor at. 
+                      Sit amet consectetur adipiscing elit. Tristique sollicitudin nibh sit amet. 
+                      {/* Dui nunc mattis enim ut tellus. Lacus sed viverra tellus in hac. 
+                      Nisl nunc mi ipsum faucibus vitae aliquet. Nunc non blandit massa enim nec dui nunc mattis enim.  */}
+                    </PrimaryType>
+                  </Box>
+                </Box>
               </Box>
-            </Box>
-            </Box>
-
-            </Box>
-          </Box>
+            </Grid>
+          </Grid>
+        </Box>
+          {/* </Box> */}
           <Box id="nutshell"
             sx={{
               display: "flex", 
               flexDirection: "rows", 
-              margin: "100px"
+              // margin: "100px", 
+              justifyContent: "center",
             }}>
             <Box
               sx={{
-                marginLeft: "5%",
-                display: "flex",
+                display:"flex", 
+                alignItems: "flex-start",
                 flexDirection: "column",
-                justifyContent: "center",
-                width: "80%"
+                // marginTop: "60px", 
+                width:"70%",
+                padding: "5%",
+                marginLeft: "15%",
+                marginRight:"15%",
               }}>
-              <TertiaryType variant="h6">ME IN TWENTY WORDS</TertiaryType>
+              <TertiaryType variant="h6">WHO I'VE BECOME</TertiaryType>
               <PrimaryType 
                 sx={{
                   fontSize: "50px",
+                  textAlign: "left",
                 }}>
                 Husband, Father, Metaphysical Traveler, Drummer, Creative Thinker, Loyal
               </PrimaryType>
           </Box>
           </Box>
-          <Box
-            id='Packages'
+          <Box id='Packages'
             sx={{
-              marginBottom: "100px", 
+              margin: "5%",
+              paddingTop: "3%" 
             }}>
             <Box
               sx={{
@@ -147,11 +186,10 @@ export function About() {
                 alignItems: "center",
                 flexDirection: "column",
                 marginTop: "60px", 
-
               }}>
                 <Box>
                   <TertiaryType variant="h5">
-                  Packages & Tech
+                  Frameworks, Software and Languages
                   </TertiaryType>
                 </Box>
                 <Box
@@ -162,7 +200,7 @@ export function About() {
                     sx={{
                       marginBottom: "20px"
                     }}>
-                    Frameworks, Software and Languages I Most Often Use
+                     The Basics
                   </PrimaryType> 
                 </Box>
                 <Box 
@@ -187,10 +225,43 @@ export function About() {
                       ))
                     }
                 </Box>
+                {/* Beginning of heavy use section */}
+                {/* <Box
+                  sx={{
+                    margin: "10px", 
+                  }}>
+                  <PrimaryType variant="h3"
+                    sx={{
+                      marginTop: "5%"
+
+                    }}>
+                     Current, Heavy Use
+                  </PrimaryType> 
+                </Box>
+                <Box 
+                  sx={{
+                    display:"flex", 
+                    flexDirection:"row", 
+                    marginLeft: "15%",
+                    marginRight: "15%",
+                    flexWrap: "wrap",
+                    justifyContent:"space-around",
+                  }}>
+                  {
+                    techImages &&
+                    techImages.map((item) => (
+                      <Box
+                        key={item}
+                        sx={{
+                          margin: "10px"
+                        }}>
+                        <img src={item} alt={item} height="75px" width="auto" />
+                      </Box>
+                      ))
+                    }
+                </Box> */}
               </Box>
           </Box>
-
-
         </Box>
     </Box>
   )

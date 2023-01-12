@@ -12,11 +12,11 @@ import { useTheme, styled } from '@mui/material/styles';
 
 
 const StyledLink = styled(Link)(({theme}) => ({
-  background: theme.secondary,
-  color: theme.primary,
+  background: theme.palette.secondary.main,
+  color: theme.palette.primary.main,
   '&:hover': {
-    borderColor: '#FF7300',
-    textDecoration: "underline"
+    // borderColor: theme.palette.tertiary.main,
+    textDecoration: `underline ${theme.palette.tertiary.main}`
   },
 }))
 
@@ -36,12 +36,28 @@ export function Landing() {
         color: theme.palette.primary.main,
 
       }}>
-        <Typography 
+        <Box
           sx={{
-          color: theme.palette.primary.main}}
-          variant='h1'> 
-          Dan<strong>Benton</strong>
-        </Typography>
+              display:"flex", 
+              flexDirection:"row",
+          }}>
+          <Typography variant='h1' 
+            sx={{
+              color: theme.palette.primary.main,
+            }}> 
+            Dan
+          </Typography>
+          <Typography variant='h1' 
+            sx={{
+              fontWeight: "700",
+              color: theme.palette.primary.main,
+              '&:hover': {
+                color: theme.palette.tertiary.main
+                }
+              }}> 
+              Benton
+            </Typography>
+        </Box>
         <Divider sx={{
           margin: "30px",
           background: theme.palette.tertiary.main,

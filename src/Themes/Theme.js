@@ -2,6 +2,9 @@ import { createTheme } from '@mui/material/styles';
 
 // Greys
 // export const theme = createTheme({
+//   typography: {
+//     "fontFamily": `"Poppins", sans-serif`
+//   },
 //   palette: {
 //     primary: {
 //       main: "#3B3B3B",
@@ -16,17 +19,20 @@ import { createTheme } from '@mui/material/styles';
 //   }
 // )
 
-// Blue/orange/white
+// // Blue/orange/white
 // export const theme = createTheme({
+//   typography: {
+//     "fontFamily": `"Poppins", sans-serif`
+//   },
 //   palette: {
-//     secondary: {
-//       main: "#06113C",
+//     main: {
+//       main: "#FF8C32 ",
 //       },
-//     primary: {
-//       main: "#FF8C32",
+//     secondary: {
+//       main: "#DDDDDD",
 //       },
 //     tertiary: { 
-//       main: "#DDDDDD"
+//       main: "#06113C"
 //     }
 //     }
 //   }
@@ -34,6 +40,9 @@ import { createTheme } from '@mui/material/styles';
 
 // // Browns
 // export const theme = createTheme({
+//   typography: {
+//     "fontFamily": `"Poppins", sans-serif`
+//   },
 //   palette: {
 //     secondary: {
 //       main: "#0F0E0E",
@@ -48,8 +57,12 @@ import { createTheme } from '@mui/material/styles';
 //   }
 // )
 
-// Blacks
+// Blacks 
+// The Go To 
 export const theme = createTheme({
+  typography: {
+    "fontFamily": `"Poppins", sans-serif`
+  },
   palette: {
     secondary: {
       main: "#000000",

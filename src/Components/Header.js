@@ -12,7 +12,6 @@ import {styled, useTheme} from '@mui/material/styles'
 const StyledButton = styled(Button)(({theme})=>({
   '&:hover': {
     backgroundColor: theme.palette.primary.main,
-    borderColor: 'white',
     color: theme.palette.secondary.main,
     boxShadow: "1px",
   },
@@ -23,11 +22,9 @@ const StyledLink = styled(Link)(({theme}) => ({
   marginRight: "5px",
   background: theme.secondary,
   color: theme.primary,
-
   '&:hover': {
-    borderColor: '#FF7300',
-    textDecoration: "underline"
-  },
+    textDecoration: `underline ${theme.palette.tertiary.main} 2px`
+  }
 }))
 
 export function Header() {
