@@ -61,7 +61,8 @@ import { createTheme } from '@mui/material/styles';
 // The Go To 
 export const theme = createTheme({
   typography: {
-    "fontFamily": `"Poppins", sans-serif`
+    "fontFamily": `"Poppins", sans-serif`,
+    "fontWeightLight": "100"
   },
   palette: {
     secondary: {

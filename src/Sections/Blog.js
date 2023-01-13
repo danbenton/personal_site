@@ -59,7 +59,8 @@ const theme = useTheme()
               <TertiaryType variant="h6"
                 >BLOG RATIONALE</TertiaryType>        
               <PrimaryType variant="h4">
-                I like to reflect on learnings, both to relearn and to offer advice.
+                I like to reflect on learnings, 
+                both to relearn and to provide a new perspective.
               </PrimaryType>
             </Box>
           </Box>

@@ -1,13 +1,16 @@
-import * as React from 'react'; 
+import React, { useState } from 'react';
 import { 
   Typography,
   Box,
 } from '@mui/material'
 import { useTheme, styled } from '@mui/material/styles';
-import { render } from '@testing-library/react';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Scale } from '@mui/icons-material';
 
 const PrimaryType = styled(Typography)(({theme}) => ({
   color: theme.palette.primary.main, 
+  fontWeight: "100"
     })
 )
 
@@ -22,11 +25,12 @@ const TextBox = styled(Box)({
 })
 
 export function Card(props) { 
+  const [isShown, setIsShown] = useState(false);
   const theme = useTheme() 
     return (
       <Box
         sx={{
-          width:"600px", 
+          width: "600px",
           margin: "2%"
         }}>
         <Box
@@ -51,8 +55,27 @@ export function Card(props) {
           <PrimaryType>{props.des}</PrimaryType>
         </TextBox>
         <TextBox id="readmore">
-          <TertiaryType>READ MORE</TertiaryType>
+          <Box
+            sx={{
+            display: "flex", 
+            flexDirection: "row",
+            color: theme.palette.tertiary.main,
+            }}
+            onMouseEnter={() => setIsShown(true)}
+            onMouseLeave={() => setIsShown(false)}
+            > 
+            <Typography>READ MORE</Typography>
+            {
+              isShown &&
+              <ArrowForwardIosIcon 
+              sx={{ 
+                marginLeft: "1%",
+                transform: `scale(.5)`,
+                }}/>
+            }
+          </Box>
         </TextBox>
+
       </Box>
     )
   }
