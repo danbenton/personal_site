@@ -54,7 +54,11 @@ export function About() {
               flexWrap: "wrap", 
               margin: "10%",
             }}>
-            <Grid xs={6}>
+            <Grid item={true} xs={6}
+              sx={{
+                display:"flex",
+                justifyContent: "center",
+              }}>
               {
                 meImages.map((item) => (
                   <Box
@@ -69,15 +73,17 @@ export function About() {
                       key={item}
                       src={item} alt={item}
                       sx={{ 
-                        height: "auto", width: "100%", 
+                        height: "auto",
+                        width: "100%", 
                         maxWidth: "600px", 
-                        objectFit: "cover", borderRadius: "20px",
+                        objectFit: "cover",
+                         borderRadius: "20px",
                       }}/>
                   </Box>
                 ))
               }
             </Grid>
-            <Grid xs={6}
+            <Grid item={true}xs={6}
               sx={{
                 textAlign: "left",
                 display: "flex",
@@ -87,6 +93,7 @@ export function About() {
                 sx={{
                   display: "flex", 
                   flexDirection: "column", 
+                  justifyContent: "center",
                   marginLeft: "10%",
                   marginRight: "10%",
                 }}>
